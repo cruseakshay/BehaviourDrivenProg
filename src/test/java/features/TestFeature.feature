@@ -7,7 +7,6 @@ Feature: This is a test feature
     Given I have a request body with xml:
       """
         <request>
-            <customerId>ABCD1</customerId>
             <accountList>
                 <account>
                     <accountNumber>12345</accountNumber>
@@ -32,10 +31,6 @@ Feature: This is a test feature
                 <bankInformation>
                     <bankId>3333</bankId>
                     <bankName>MNOP</bankName>
-                </bankInformation>
-                <bankInformation>
-                    <bankId>44444</bankId>
-                    <bankName>POPO</bankName>
                 </bankInformation>
             </bankInformationList>
         </response>
