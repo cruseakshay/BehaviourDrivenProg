@@ -4,12 +4,14 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.xml.sax.InputSource;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-
 import java.io.StringReader;
+
+import static Util.CommonMethods.visitNode;
 
 public class steps {
     @Given("^I have a request body with xml:$")
@@ -23,6 +25,13 @@ public class steps {
             Document document = builder.parse(new InputSource(new StringReader(requestXML)));
 
             System.out.println("\n requestDoc :: " + document.getNodeName());
+            // to get the root element
+            Element rootElement = document.getDocumentElement();
+            visitNode(null, rootElement);
+
+            System.out.println("\n Root Element is: " + rootElement.getTagName());
+
+
         } catch (Exception e){
           e.printStackTrace();
         }
