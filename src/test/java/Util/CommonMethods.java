@@ -11,14 +11,16 @@ import java.util.List;
 
 public class CommonMethods {
 
+    private static String s;
     public XPath xPath = XPathFactory.newInstance().newXPath();
 
     public static void visitNode(Element previousNode, Element visitNode) {
+
         if (previousNode != null) {
             System.out.println("Element " + previousNode.getTagName() + " has element:");
         }
         System.out.println("Element Name: " + visitNode.getTagName());
-        steps.map.put(visitNode.getTagName(), (visitNode.getNodeType() == Node.TEXT_NODE ? visitNode.getNodeValue().trim():null));
+
 
         // for node attributes.
         if (visitNode.hasAttributes()) {
@@ -44,7 +46,7 @@ public class CommonMethods {
                 String str = node.getNodeValue().trim();
                 if (str.length() > 0) {
                     System.out.println("Element Text: " + str);
-
+                    steps.map.put(visitNode.getTagName(), str);
                 }
             }
 
