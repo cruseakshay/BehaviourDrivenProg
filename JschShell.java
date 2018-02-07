@@ -202,3 +202,31 @@ public class SftpUtil {
         }
     }
 }
+/* 
+    import java.text.SimpleDateFormat;  
+import java.util.Date;  
+public class StringToDateExample1 {  
+public static void main(String[] args)throws Exception {  
+    String sDate1="31/12/1998";  
+    Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);  
+    System.out.println(sDate1+"\t"+date1);  
+}  
+} 
+
+=============================================================
+    DateFormat df = new SimpleDateFormat("yyyy.MM.dd");
+
+    Date date3 = Calendar.getInstance().getTime();
+
+    String startDate = df.format(date3);
+
+    try {
+
+    java.sql.Date date = new java.sql.Date(df.parse(startDate).getTime());
+
+    System.out.println(date);
+
+    } catch (ParseException ex) {
+      Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+    }
+*/
